@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow");
+@font-face { 
+  font-family: "Starjhol"; 
+  src: url("./fonts/Starjhol.ttf"); 
+}
+
+:root {
+  --main-bg-color: #090909;
+  --main-text-color: white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.618;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+  /*background-image: url(background.gif);*/
+  background-attachment: fixed;
+  overflow: auto; }
+
+a,
+a:link,
+a:hover,
+a:visited {
+  color: var(--main-text-color);
+  text-decoration: none; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 100; }
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto; }
+  .logo > img {
+    width: 100%; }
+
+header,
+footer {
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+
+}
+
+body > header {
+  position: fixed;
+  width: 100%; }
+  body > header > nav {
+    margin: 0 auto;
+    width: calc(100% - 8rem);
+    padding: .5rem 0 .5rem; }
+    body > header > nav > ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row; }
+      body > header > nav > ul > li {
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        font-size: 1rem;
+        text-transform: capitalize; }
+
+#title > h1 {
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-family: "Starjhol", cursive;
+  color: yellow;
+  font-size: 3rem;
+  line-height: 3rem; 
+}
+
+#title > h2 {
+    text-align: center;
+    margin: 0 auto .5rem;
+    padding-bottom: .2rem;
+    font-size: 1.3em; 
+    border-bottom: 1px solid var(--main-text-color);
+    width: 10em;
+  }
+
+main {
+  flex-grow: 2;
+  margin-top: 8rem; 
+  text-align: center;
+}
+  main > nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 4rem; }
+    main > nav > button {
+    border-bottom: 1px solid var(--main-text-color);
+    border: 0px solid #000;
+      text-decoration: underline;
+      margin: 0 0 0 .5rem; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; 
+  text-align: left;
+}
+  .cards > section {
+    width: calc(50% - (4rem)*2);
+    margin: 3rem 4rem;
+    border-bottom: 1px solid var(--main-text-color);
+    border: 1px solid var(--main-text-color);
+    border-radius: 0;
+    overflow: hidden;
+    text-transform: capitalize; }
+    .cards > section > header {
+    border-bottom: 1px solid var(--main-text-color);
+     }
+      .cards > section > header > h1 {
+        font-size: 1rem;
+        text-align: center;
+        padding: .3rem; }
+    .cards > section > div {
+      padding: 1rem; }
+      .cards > section > div > ul {
+        list-style-type: none;
+        margin: 1rem 0;
+        padding: 0;
+        font-size: .9rem;
+        line-height: 1.6rem; }
+        .cards > section > div > ul > li {
+          display: flex;
+          padding: 0;
+          justify-content: space-between; }
+          .cards > section > div > ul > li > .value {
+            text-align: right; }
+
+button {
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  border: 0.5px solid var(--main-text-color);
+  border-radius: 0;
+  padding: 0.3rem 0.3rem;
+  text-transform: lowercase; }
+
+body > footer {
+  border-top: 1px solid var(--main-text-color);
+  padding: 2rem 1rem; }
+
+/* -------------------------------- */
+.modal,
+.modal > .underlay {
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.modal {
+  height: 0;
+  z-index: 10;
+  overflow: hidden;
+  transition: height 300ms ease;
+  position: fixed; }
+
+.modal.open {
+  height: 100%; }
+
+.modal > .underlay {
+  z-index: 10;
+  background-color: rgba(26, 25, 25, 0.7); }
+
+.modal > .body {
+  z-index: 20;
+  margin: 3em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  box-shadow: 0 4px 8px 0 #fff;
+  padding: 2em; }
+
+.modal .controls {
+  text-align: right; }
+
+.modal .content {
+  flex-grow: 1;
+  border-radius: 3px;
+  overflow: auto;
+  text-transform: capitalize; }
+
+.modal header {
+  margin-bottom: 1rem; }
+
+.modal ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.modal li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.modal button {
+  z-index: 100; }
+
+@media only screen and (max-width: 680px) {
+  .cards > section {
+    width: calc(100% - (4rem)*2); } 
+  }
